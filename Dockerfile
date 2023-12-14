@@ -28,7 +28,7 @@ LABEL maintainer="Amrit Duwal"
 ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
-COPY ./requirements.dev.txt /temp/requirements.txt
+COPY ./requirements.dev.txt /tmp/requirements.txt
 COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
