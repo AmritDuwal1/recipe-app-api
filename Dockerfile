@@ -40,7 +40,7 @@ RUN apk --update add --no-cache shadow && \
     /py/bin/pip install flake8 && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [ $DEV = "true" ]; \
-        then /py/bin/pip install -r /temp/requirements.dev.text ; \
+        then /py/bin/pip install -r /tmp/requirements.dev.text ; \
     fi && \
     rm -rf /tmp && \
     adduser \
