@@ -9,8 +9,8 @@ from psycopg2 import OperationalError as Psycopg2Error
 from django.core.management import call_command
 from django.db.utils import OperationalError
 from django.test import SimpleTestCase
-from app.core import tests
-import sys
+# from app.core import tests
+# import sys
 
 @patch('core.management.commands.wait_for_db.Command.check')
 class CommandTests(SimpleTestCase):
@@ -22,7 +22,7 @@ class CommandTests(SimpleTestCase):
 
         call_command('wait_for_db')
 
-        patched_check.assert_called_once_with(database=['default'])
+        patched_check.assert_called_once_with(databases=['default'])
 
     @patch('time.sleep')
     def test_wait_for_db(self, patched_sleep, patched_check):
@@ -33,4 +33,4 @@ class CommandTests(SimpleTestCase):
         call_command('wait_for_db')
 
         self.assertEqual(patched_check.call_count, 6)
-        patch_check.assert_called_with(database=['default'])
+        patched_check.assert_called_with(databases=['default'])
