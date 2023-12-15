@@ -14,11 +14,11 @@ EXPOSE 8000
 
 ARG DEV=false
 
-RUN apk --update add --no-cache shadow && \
-    python -m venv /py && \
+RUN python -m venv /py && \
+    # apk --update add --no-cache shadow && \
     /py/bin/pip install --upgrade pip && \
     # apk add --update --no-cache postgresql-client=13.3-r0 && \
-    apk add --update --no-cache postgresql-client=13.11-r0 && \
+    apk add --update --no-cache postgresql-client=13.12-r0 && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install flake8 && \
