@@ -23,6 +23,7 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install flake8 && \
     /py/bin/pip install -r /tmp/requirements.text && \
+    /py/bin/pip install djangorestframework==3.12.4 && \
     if [ $DEV = "true" ]; \
         then /py/bin/pip install -r /tmp/requirements.dev.text ; \
     fi && \
