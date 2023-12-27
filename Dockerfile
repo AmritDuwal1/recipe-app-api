@@ -7,9 +7,10 @@ LABEL maintainer="Amrit Duwal"
 
 ENV PYTHONUNBUFFERED 1
 
-COPY ./requirements.txt /tmp/requirements.text
-COPY ./requirements.dev.txt /tmp/requirements.dev.text
+COPY ./requirements.txt /tmp/requirements.txt
+COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./scripts /scripts
+COPY ./scripts/run.sh /run.sh
 COPY ./app /app
 WORKDIR /app
 EXPOSE 8000
@@ -25,7 +26,7 @@ RUN python -m venv /py && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev zlib zlib-dev linux-headers && \
     /py/bin/pip install flake8 && \
-    /py/bin/pip install -r /tmp/requirements.text && \
+    /py/bin/pip install -r /tmp/requirements.txt && \
     /py/bin/pip install djangorestframework==3.12.4 && \
     if [ $DEV = "true" ]; \
         then /py/bin/pip install -r /tmp/requirements.dev.text ; \
