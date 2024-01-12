@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'changeme')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'amritduwal.pythonanywhere.com']
 ALLOWED_HOSTS.extend(
     filter(
         None,
@@ -141,9 +141,10 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = '/vol/web/media'
-STATIC_ROOT = '/vol/web/static'
+# STATIC_ROOT = '/vol/web/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
