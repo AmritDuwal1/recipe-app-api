@@ -143,8 +143,10 @@ STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = '/vol/web/media'
 # STATIC_ROOT = '/vol/web/static'
+
+MEDIA_ROOT = '/vol/web/media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -161,5 +163,5 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'COMPONENET_SPLIT_REQUEST': True,
+    'COMPONENT_SPLIT_REQUEST': True,
 }
